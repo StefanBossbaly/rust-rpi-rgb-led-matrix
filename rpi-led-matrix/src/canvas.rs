@@ -16,6 +16,9 @@ pub struct LedCanvas {
     pub(crate) handle: *mut ffi::CLedCanvas,
 }
 
+unsafe impl Send for LedCanvas {}
+unsafe impl Sync for LedCanvas {}
+
 impl LedCanvas {
     /// Retrieves the width & height of the canvas
     #[must_use]
